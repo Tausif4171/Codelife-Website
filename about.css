@@ -1,0 +1,14 @@
+*{
+   padding:0px;
+   margin:0px;
+}
+.bgimage{
+	background-image:url("bg1.jpg");
+	background-size:100% 110%;
+	width:100%;
+	height:100vh;
+}
+.para{
+	font-family:"sens-serif";
+	color:#000;
+}
