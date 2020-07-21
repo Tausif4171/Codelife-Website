@@ -18,12 +18,14 @@
 	line-height:100px;
 	float:left;
 }
-.leftmenu h4{
+
+.leftmenu h4 a{
 	font-weight:bold;
 	color:white;
 	font-size:50px;
 	padding-left:70px;
-}	
+	text-decoration: none;	
+}
 .rightmenu{
 	width:35%;
 	height:100px;
@@ -31,8 +33,6 @@
 }
 .rightmenu ul{
 	margin-left:200px;
-	
-
 }
 .rightmenu ul li{
 	display:inline-block;
