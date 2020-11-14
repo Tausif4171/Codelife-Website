@@ -10,14 +10,12 @@
 	float:left;
 	
 }
-.leftmenu h4 a{
+.leftmenu h4{
      padding-left: 70px;
 	 font-weight: bold;
 	 color:white;
 	 font-size: 50px;
 	 text-transform:uppercase;
-	 text-decoration: none;
-	 
 }
 .rightmenu{
 	width: 35%;

@@ -4,7 +4,7 @@
 <link rel="icon" type="image/ico" href="C:\Users\sumayya khan\Desktop\Codelife Website\Codelife-Website\logo.jpg" />
 <title>Contact</title>
 <link  rel="stylesheet" type="text/css" href="contact.css">
-<link  rel="stylesheet" type="text/css" href="footer.css">
+<link  rel="stylesheet" type="text/css" href="navigation.css">
 </head>
 <body>
 <div class="bgimage">
@@ -33,13 +33,141 @@
 <h2>We are always ready to serve you!</h2>
 </div>
 <div class="contact-form">
-<form id="contact-form">
-<input name="name" class="form-control" type="text" placeholder="Your Name" required></input><br>
-<input name="email" class="form-control" type="email" placeholder="Your Email" required></input><br>
-<textarea name="message" class="form-control" placeholder="Your Message" rows="4" required></textarea><br>
-<input type="submit" class="form-control submit" value="SEND MESSAGE"></input>
+<form action="thankyou.html" onsubmit="return validation()" id="contact-form">
+
+<label class="label" >Name: </label>
+&nbsp;
+<input name="name" class="form-control" type="text" placeholder="Your Name" id="name" 
+autocomplete = "off">
+<br>
+<span class="span" id="yourname" > </span>
+<br>
+
+<label class="label">Mobile Number: </label>
+&nbsp;
+<input name="mob" class="form-control" type="text" placeholder="Your Phone Number" id="mob" 
+autocomplete = "off">
+<br>
+<span class="span" id="yourmob" > </span>
+<br>
+
+<label class="label">Email: </label>
+&nbsp;
+<input name="email" class="form-control" type="text" placeholder="Your Email" id="email" 
+autocomplete = "off" >
+<br>
+<span class="span" id="youremail" > </span>
+<br>
+
+<label class="label">Password: </label>
+&nbsp;
+<input name="pass" class="form-control" type="password" placeholder="Your Password" id="pass" 
+autocomplete = "off">
+<br>
+<span class="span" id="yourpass" > </span>
+<br>
+
+<label class="label">Confirm Password: </label>
+&nbsp;
+<input name="confirmpass" class="form-control" type="password" placeholder="Your Confirm Password" id="confirmpass" 
+autocomplete = "off">
+<br>
+<span class="span" id="yourconfirmpass" > </span>
+<br>
+
+<label class="label">Message: </label>
+&nbsp;
+<textarea name="message" class="form-control" placeholder="Your Message" rows="4" id="message" 
+autocomplete = "off"></textarea>
+<br>
+<span class="span" id="yourmessage" > </span>
+<br>
+
+<input type="submit" name="submit" class="form-control submit" value="SUBMIT">
+
 </form>
 </div>
 </div>
+<script type="text/javascript">
+    function validation(){
+        var user = document.getElementById('name').value;
+        var mob = document.getElementById('mob').value;
+        var email = document.getElementById('email').value;
+        var pass = document.getElementById('pass').value;
+        var confirmpass = document.getElementById('confirmpass').value;
+        var message = document.getElementById('message').value;
+        
+        //Name Validation
+        if(user == ""){
+            document.getElementById('yourname').innerHTML=" ** enter your name ";
+            return false;
+        }
+        if((user.length<=2) || (user.length>20)){
+            document.getElementById('yourname').innerHTML=" **  Your name length should be between 2 to 20 ";
+            return false;
+
+        }
+        if(!isNaN(user)){
+            document.getElementById('yourname').innerHTML=" **  Only alphabets are allowed ";
+            return false;
+        }
+
+        //Mobile Number Validation
+        if(mob == ""){
+            document.getElementById('yourmob').innerHTML=" ** enter your mobile number ";
+            return false;
+        }
+        if(isNaN(mob)){
+            document.getElementById('yourmob').innerHTML=" ** Only digits are allowed ";
+            return false;
+
+        }
+        if(mob.length!=10){
+            document.getElementById('yourmob').innerHTML=" ** Length should be at least 10 ";
+            return false;
+        }
+
+        //Email Validation
+        if(email == ""){
+            document.getElementById('youremail').innerHTML=" ** enter your email ";
+            return false;
+        }
+        if(email.indexOf('@') <= 0){
+            document.getElementById('youremail').innerHTML=" ** @ invalid position ";
+            return false;
+        }
+        if((email.charAt(email.length-4) != '.') && (email.charAt(email.length-3) != '.')){
+            document.getElementById('youremail').innerHTML=" ** . invalid position ";
+            return false;
+        }
+
+        //Password Validation
+        if(pass == ""){
+            document.getElementById('yourpass').innerHTML=" ** enter your password ";
+            return false;
+        }
+        if((pass.length<=5) || (pass.length>15)){
+            document.getElementById('yourpass').innerHTML=" ** Your password length should be between 5 to 15";
+            return false;
+
+        }
+        if(confirmpass == ""){
+            document.getElementById('yourconfirmpass').innerHTML=" ** enter your confirm password ";
+            return false;
+        }
+        if(pass!=confirmpass){
+            document.getElementById('yourconfirmpass').innerHTML=" ** Password not match ";
+            return false;
+
+        }
+
+        //Message
+        if(message == ""){
+            document.getElementById('yourmessage').innerHTML=" ** enter your message ";
+            return false;
+        }
+
+    }
+</script>
 </body>
 </html>

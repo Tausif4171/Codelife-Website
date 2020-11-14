@@ -75,7 +75,13 @@
 	margin-top:10px;
 	width:150px;
 	border:none;
+	
 
+	
+}
+#btnone a{
+	color: black;
+	text-decoration: none;
 	
 }
 #btntwo{
